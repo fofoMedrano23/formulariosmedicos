@@ -8,14 +8,14 @@
                 <a class="nav-link waves-light" routerLink="home" mdbWavesEffect>Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+                <a class="nav-link waves-light" routerLink="formularios" *ngIf="auth.is.medico" mdbWavesEffect>Formularios</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" >Disabled</a>
-            </li>
+              <li class="nav-item" routerLinkActive="paciente" *ngIf="auth.is.medico">
+                <a class="nav-link" routerLink="paciente">Paciente</a>
+              </li>
+              <li class="nav-item" routerLinkActive="patientform1resource" *ngIf="auth.is.medico">
+                <a class="nav-link" routerLink="patientform1resource">Archivo</a>
+              </li>
         </ul>
 
         <ul class="nav navbar-nav ml-auto">

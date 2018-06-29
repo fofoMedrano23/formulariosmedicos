@@ -7,7 +7,7 @@ import { FormioAuthService } from 'angular-formio/auth';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
 
   constructor(private auth: FormioAuthService, private router: Router) {
   this.auth.onLogin.subscribe(() => {

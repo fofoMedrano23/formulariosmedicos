@@ -6,6 +6,9 @@ import { FormioAppConfig } from 'angular-formio';
 import { FormioAuthService, FormioAuthConfig } from 'angular-formio/auth';
 import { AuthConfig, AppConfig } from '../config';
 import { AuthModule } from './auth/auth.module';
+import { FormulariosComponent } from "./formularios/formularios.component";
+import {PacienteModule} from './paciente/paciente.module';
+import { RegistroFormulario1Module } from "./registro-formulario1/registro-formulario1.module";
 
 const routes : Routes = [
     {
@@ -20,6 +23,17 @@ const routes : Routes = [
       {
         path: 'auth',
         loadChildren: () => AuthModule
+      },{
+        path: 'formularios',
+        component: FormulariosComponent
+      },
+      {
+        path: 'paciente',
+        loadChildren: () => PacienteModule
+      },
+      {
+        path: 'patientform1resource',
+        loadChildren: () => RegistroFormulario1Module 
       }
     
     
