@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { FormulariosComponent } from "./formularios/formularios.component";
 import {PacienteModule} from './paciente/paciente.module';
 import { RegistroFormulario1Module } from "./registro-formulario1/registro-formulario1.module";
+import {AuthGuard} from "./auth/auth.guard";
 
 const routes : Routes = [
     {
@@ -25,7 +26,7 @@ const routes : Routes = [
         loadChildren: () => AuthModule
       },{
         path: 'formularios',
-        component: FormulariosComponent
+        component: FormulariosComponent,canActivate: [AuthGuard]
       },
       {
         path: 'paciente',
@@ -42,7 +43,7 @@ const routes : Routes = [
 @NgModule({
     imports : [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    providers: [FormioAuthService,
+    providers: [AuthGuard,FormioAuthService,
         {provide: FormioAuthConfig, useValue: AuthConfig},
         {provide: FormioAppConfig, useValue: AppConfig}]
 })
