@@ -10,18 +10,29 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './home/home.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { SeccionFormulariosComponent } from './formularios/seccion-formularios/seccion-formularios.component';
-
+import { FormioGrid } from 'angular-formio/grid';
+import { Formulario1Component } from './formularios/formulario1/formulario1.component';
+import { FormularioSolicitudAnalisisComponent } from './formularios/formulario-solicitud-analisis/formulario-solicitud-analisis.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { SeccionReportesComponent } from './reportes/seccion-reportes/seccion-reportes.component';
+import { ReporteSolicitudAnalisisComponent } from './reportes/reporte-solicitud-analisis/reporte-solicitud-analisis.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
     FormulariosComponent,
-    SeccionFormulariosComponent
+    SeccionFormulariosComponent,
+    Formulario1Component,
+    FormularioSolicitudAnalisisComponent,
+    ReportesComponent,
+    SeccionReportesComponent,
+    ReporteSolicitudAnalisisComponent
     
     
   ],
   imports: [
+    FormioGrid,
     FormioModule,
     AppRoutingModule,
     BrowserModule,

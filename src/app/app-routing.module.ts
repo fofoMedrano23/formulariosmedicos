@@ -10,6 +10,10 @@ import { FormulariosComponent } from "./formularios/formularios.component";
 import {PacienteModule} from './paciente/paciente.module';
 import { RegistroFormulario1Module } from "./registro-formulario1/registro-formulario1.module";
 import {AuthGuard} from "./auth/auth.guard";
+import { Formulario1Component } from "./formularios/formulario1/formulario1.component";
+import { FormularioSolicitudAnalisisComponent } from "./formularios/formulario-solicitud-analisis/formulario-solicitud-analisis.component";
+import { ReportesComponent } from "./reportes/reportes.component";
+import { ReporteSolicitudAnalisisComponent } from "./reportes/reporte-solicitud-analisis/reporte-solicitud-analisis.component";
 
 const routes : Routes = [
     {
@@ -24,13 +28,30 @@ const routes : Routes = [
       {
         path: 'auth',
         loadChildren: () => AuthModule
-      },{
+      },
+      {
         path: 'formularios',
         component: FormulariosComponent,canActivate: [AuthGuard]
       },
       {
+        path: 'formularios/formulario1',
+        component: Formulario1Component,canActivate: [AuthGuard]
+      },
+      {
+        path: 'formularios/formulario-solicitud-analisis',
+        component: FormularioSolicitudAnalisisComponent,canActivate: [AuthGuard]
+      },
+      {
+        path: 'reportes',
+        component: ReportesComponent,canActivate: [AuthGuard]
+      },
+      {
+        path: 'reportes/reporte-solicitud-analisis',
+        component: ReporteSolicitudAnalisisComponent,canActivate: [AuthGuard]
+      },
+      {
         path: 'paciente',
-        loadChildren: () => PacienteModule
+        loadChildren: () => PacienteModule, canActivate: [AuthGuard]
       },
       {
         path: 'patientform1resource',
