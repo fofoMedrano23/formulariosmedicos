@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Formulario1Component implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
